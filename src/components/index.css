@@ -1,0 +1,183 @@
+/* ---------------------------------------FORM LOGIN--------------------------------------- */
+@import url('../index.css');
+
+.formforlogin {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formforlogin h3 {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #717171;
+    text-align: center;
+
+    &:hover {
+        color: var(--var-primary);
+    }
+}
+
+.formforlogin h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    border-right: 1px solid;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.loginheader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20%;
+}
+
+
+/* ----------INPUT LOGIN/REGISTRO---------- */
+
+.inputMain {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--input-color);
+    background-color: var(--input-color);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    &:focus {
+        border: 1px solid var(--var-primary)
+    }
+}
+
+.inputMainError {
+    width: 100%;
+    height: 40px;
+    border: 1px solid red;
+    background-color: var(--input-color);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    ::placeholder {
+        color: red;
+    }
+    &:focus {
+        border: 1px solid red
+    }
+}
+
+
+/* ----------BOTÓN INICIO DE SESIÓN ---------- */
+
+.buttonMain {
+    width: 50%;
+    height: 40px;
+    border: none;
+    background-color: var(--var-primary);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        background-color: #156658;
+    }
+
+}
+
+
+/* ----------LABEL ERROR  ---------- */
+
+.labelError {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ----------ICONOS ---------- */
+
+
+.icon {
+    width: 100%
+}
+
+.icons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+}
+
+
+/* ---------------------------------------FORM REGISTER--------------------------------------- */
+
+.col2 {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerheader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#h1register {
+    font-size: 30px;
+    border-right: 0px solid;
+    margin-bottom: 40%;
+}
+
+@media screen and (max-width: 920px) {
+    .formforlogin {
+        width: 40%;
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    .formforlogin {
+        width: 60%;
+    }
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .formforlogin {
+        width: 80%;
+    }
+
+}

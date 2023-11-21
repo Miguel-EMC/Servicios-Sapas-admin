@@ -1,0 +1,47 @@
+@import url('../index.css');
+
+/* ---------------------------------------CSS FOR LOGIN AND REGISTER--------------------------------------- */
+
+
+.app{
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(110.06deg, #1D1B19 15.88%, #164A41 80.8%);
+}
+
+.login-container {
+    margin: 3%;
+    width: 100%;
+}
+
+.login {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.images {
+    /* background-image: url('../assets/img/imglogin.png'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.forms {
+    background-color: var(--backgroundforms-color);
+    border-radius: 0px 5px 5px 0px;
+}
+
+@media screen and (max-width: 920px) {
+
+    .images {
+        display: none;
+    }
+
+    .forms {
+        background-color: var(--backgroundforms-color);
+        border-radius: 5px 5px 5px 5px;
+    }
+}
+
