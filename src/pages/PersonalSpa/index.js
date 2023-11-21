@@ -1,0 +1,1 @@
+export {HomePersonalSpa} from './HomePersonalSpa'

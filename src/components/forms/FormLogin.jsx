@@ -29,23 +29,21 @@ export const Formslogin = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                'http://127.0.0.1:8000/api/users/login/',
+                'http://127.0.0.1:8000/api/login/',
                 { email, password },
                 { headers: { 'Content-Type': 'application/json' } }
             );
 
-            const { token, user_info } = response.data
-            login(user_info, `${token}`);
-            console.log('Respuesta:', response.data.user_info);
+            const { jwt, user } = response.data;
+            localStorage.setItem('token', jwt);
+            localStorage.setItem('user', JSON.stringify(user));
             navigate('/homeAdmin');
-            window.location.reload()
         } catch (error) {
             const responseData = error.response.data;
             const translatedErrors = Object.keys(responseData).reduce((acc, key) => {
                 acc[key] = errorTranslations[responseData[key][0]] || responseData[key][0];
                 return acc;
             }, {});
-            console.log('Error de respuesta:', error.response.data);
             setUserError(translatedErrors.email || '');
             setPasswordError(translatedErrors.password || '');
             setError(translatedErrors.non_field_errors || '');
@@ -56,7 +54,7 @@ export const Formslogin = () => {
         <form className="formforlogin" onSubmit={onLogin}>
 
             <div className="loginheader">
-                <h1>gfdgfdg</h1>
+                <h1>Servicios Spas</h1>
                 <h4>Inicio de Sesión</h4>
             </div>
             {error &&

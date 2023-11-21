@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp'; // Icono de cerrar sesión
 
-const HeaderAdmin = () => {
+const HeaderPersonalSpa = () => {
   const [openDrawer, setOpenDrawer] = React.useState(false);
   const navigate = useNavigate(); // Utilizando useNavigate para la navegación
 
@@ -40,20 +40,11 @@ const HeaderAdmin = () => {
       <Drawer anchor="left" open={openDrawer} onClose={handleDrawerClose}>
         <List>
           {/* Ítems del menú */}
-          <ListItem button component={Link} to="/homeAdmin" onClick={handleDrawerClose}>
+          <ListItem button component={Link} to="/home" onClick={handleDrawerClose}>
             <ListItemText primary="Inicio" />
           </ListItem>
-          <ListItem button component={Link} to="/services" onClick={handleDrawerClose}>
+          <ListItem button component={Link} to="/servicesSpa" onClick={handleDrawerClose}>
             <ListItemText primary="Servicios" />
-          </ListItem>
-          <ListItem button component={Link} to="/categories" onClick={handleDrawerClose}>
-            <ListItemText primary="Categorías" />
-          </ListItem>
-          <ListItem button component={Link} to="/spas" onClick={handleDrawerClose}>
-            <ListItemText primary="Spas" />
-          </ListItem>
-          <ListItem button component={Link} to="/users" onClick={handleDrawerClose}>
-            <ListItemText primary="Usuarios" />
           </ListItem>
           {/* Separador */}
           <Divider />
@@ -71,4 +62,4 @@ const HeaderAdmin = () => {
   );
 };
 
-export default HeaderAdmin;
+export default HeaderPersonalSpa;

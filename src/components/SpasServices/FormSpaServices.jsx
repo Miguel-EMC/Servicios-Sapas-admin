@@ -8,9 +8,9 @@ import Avatar from '@mui/material/Avatar';
 import InputAdornment from '@mui/material/InputAdornment';
 import ImageIcon from '@mui/icons-material/Image';
 import { useNavigate } from 'react-router-dom';
-import HeaderAdmin from '../../components/HeaderAdmin';
+import HeaderPersonalSpa from '../HeaderPersonalSpa';
 
-const FormServices = () => {
+const FormSpaServices = () => {
   const [newServiceData, setNewServiceData] = useState({
     name_service: '',
     description: '',
@@ -28,8 +28,9 @@ const FormServices = () => {
     e.preventDefault();
   
     const token = localStorage.getItem('token');
-
-    console.log(token)
+    const userId = JSON.parse(localStorage.getItem('user')).id; // Obtener el ID del usuario del localStorage
+  
+    console.log(userId)
     try {
       const response = await axios.post(
         'http://127.0.0.1:8000/api/services/',
@@ -38,6 +39,7 @@ const FormServices = () => {
           description: newServiceData.description,
           materials: newServiceData.materials,
           thumbnail: newServiceData.thumbnail,
+          create_by: userId, // Pasar el user.id al crear el servicio
         },
         {
           headers: {
@@ -46,16 +48,17 @@ const FormServices = () => {
         }
       );
       console.log('Nuevo servicio creado:', response.data);
-      navigate('/services');
+      navigate('/servicesSpa');
     } catch (error) {
       console.error('Error al crear el nuevo servicio:', error.response.data);
     }
   };
   
+  
 
   return (
     <>
-          <HeaderAdmin />
+          <HeaderPersonalSpa />
     <Box sx={{ maxWidth: 400, margin: 'auto', mt: 4 }}>
       <Typography variant="h4" gutterBottom>
         Crear Nuevo Servicio
@@ -124,4 +127,4 @@ const FormServices = () => {
   );
 };
 
-export default FormServices;
+export default FormSpaServices;
